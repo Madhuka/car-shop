@@ -1,0 +1,8 @@
+<module name="car" namespace="$car" expose="false" xmlns="http://wso2.org/projects/jaggery/module.xml">
+    <!-- methods -->
+    <method readOnly="true">
+        <className>org.jaggeryjs.hostobjects.car.CarHostObject</className>
+        <name>drive</name>
+    </method>     
+
+</module>
