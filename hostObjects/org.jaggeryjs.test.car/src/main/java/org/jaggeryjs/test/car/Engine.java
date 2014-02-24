@@ -6,26 +6,28 @@ import org.apache.commons.logging.LogFactory;
 public class Engine {
 
 	private final Log log = LogFactory.getLog(Engine.class);
-private String engineStatus = "non started";
-	public  void start() {
+	private String engineStatus = "non started";
+
+	public void start() {
 		log.info("starting Engine");
-		//Engine is starting.
-		engineStatus =  "Engine Started";
+		// Engine is starting.
+		engineStatus = "Engine Started";
 	}
-	
-	public  void stop() {
+
+	public void stop() {
 		log.info("stopping Engine");
-		//Engine is stopping.
-		engineStatus =  "Engine stopped";
+		// Engine is stopping.
+		engineStatus = "Engine stopped";
 	}
-	public  String getEngineStatus() {
+
+	public String getEngineStatus() {
 		log.info("Checking Engine Status");
 		return engineStatus;
 	}
-	
-	public  String changeGear(int gear) {
-		log.info("changeGear to "+gear);
-		//Changing gears
-		return "Gear Changed to "+gear;
+
+	public String changeGear(int gear) {
+		log.info("changeGear to " + gear);
+		// Changing gears
+		return "Gear Changed to " + gear;
 	}
 }

@@ -10,29 +10,28 @@ import org.mozilla.javascript.Scriptable;
 import org.mozilla.javascript.ScriptableObject;
 import org.jaggeryjs.test.car.Engine;
 
-public class CarHostObject  extends ScriptableObject {
+public class CarHostObject extends ScriptableObject {
 
 	private static final Log log = LogFactory.getLog(CarHostObject.class);
 	private static final String MODULE_NAME = "car";
 	private static CarHostObject car = null;
 	private static Engine engine = null;
-	
-    /**
-     * Constructor for the use by Rhino
-     */
-    public CarHostObject() {
-    }
 
-    /**
-     * Constructor the user will be using inside javaScript
-     */
-    public static Scriptable jsConstructor(Context cx, Object[] args, Function ctorObj,
-                                           boolean inNewExpr) throws ScriptException {
-        car = new CarHostObject();
-        engine = new Engine();
-        return car;
-    }
-    
+	/**
+	 * Constructor for the use by Rhino
+	 */
+	public CarHostObject() {
+	}
+
+	/**
+	 * Constructor the user will be using inside javaScript
+	 */
+	public static Scriptable jsConstructor(Context cx, Object[] args,
+			Function ctorObj, boolean inNewExpr) throws ScriptException {
+		car = new CarHostObject();
+		engine = new Engine();
+		return car;
+	}
 
 	public static void jsFunction_start(Context cx, Scriptable thisObj,
 			Object[] args, Function funObj) throws ScriptException {
@@ -42,7 +41,7 @@ public class CarHostObject  extends ScriptableObject {
 			HostObjectUtil.invalidNumberOfArgs(MODULE_NAME, functionName,
 					argsCount, true);
 		}
-		
+
 		engine.start();
 	}
 
@@ -54,7 +53,7 @@ public class CarHostObject  extends ScriptableObject {
 			HostObjectUtil.invalidNumberOfArgs(MODULE_NAME, functionName,
 					argsCount, true);
 		}
-		
+
 		engine.stop();
 	}
 
@@ -92,9 +91,9 @@ public class CarHostObject  extends ScriptableObject {
 			Float speed = Float.parseFloat(args[1].toString());
 			return driverName + " is driving car with speed" + speed;
 		}
-Engine eng  = new Engine();
-eng.start();
-eng.getEngineStatus();
+		Engine eng = new Engine();
+		eng.start();
+		eng.getEngineStatus();
 		return "car is driving";
 	}
 
