@@ -1,0 +1,7 @@
+<module name="weather" namespace="$weather" expose="false" xmlns="http://wso2.org/projects/jaggery/module.xml">
+    <!-- methods -->
+    <method readOnly="true">
+        <className>org.jaggeryjs.hostobjects.weather.WeatherHostObject</className>
+        <name>report</name>
+    </method>       
+</module>
